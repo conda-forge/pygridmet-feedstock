@@ -1,5 +1,5 @@
 {% set name = "pygridmet" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pygridmet-{{ version }}.tar.gz
-  sha256: 048d83177824fe60e79aa30142b03a3dbb0d2df1a0dbc766575fff7a65d369d2
+  sha256: 0934e0a5f218741a67e30f667b159fbe7403677564c92e456e9cb12f90aaf08a
 
 build:
   entry_points:
