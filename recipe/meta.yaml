@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pygridmet-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pygridmet-{{ version }}.tar.gz
   sha256: 5ad34bc0b8116295411d58f0adb075ca2d43f48b1a80371b5eb65cb961245b60
 
 build:
@@ -14,16 +14,16 @@ build:
     - pygridmet = pygridmet.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - hatchling >=1.12
     - hatch-vcs
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - async-retriever <0.19,>=0.18
     - click >=0.7
     - geopandas-base >=1
@@ -43,6 +43,7 @@ test:
     - pygridmet --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Access daily, monthly, and annual climate data via the Daymet web service.
