@@ -27,6 +27,7 @@ requirements:
     - aiofiles
     - aiohttp >=3.8.3
     - click >=0.7
+    - nest-asyncio
     - netcdf4
     - numpy >=2
     - pandas >=1
