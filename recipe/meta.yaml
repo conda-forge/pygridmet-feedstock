@@ -1,5 +1,5 @@
 {% set name = "pygridmet" %}
-{% set version = "0.18.0" %}
+{% set version = "0.19.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pygridmet-{{ version }}.tar.gz
-  sha256: 5ad34bc0b8116295411d58f0adb075ca2d43f48b1a80371b5eb65cb961245b60
+  sha256: a4d958304e9ec4629219a9e78c31068f1a4c05ec6a6893bf004569dcdff9e2bf
 
 build:
   entry_points:
     - pygridmet = pygridmet.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -24,16 +24,16 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - async-retriever <0.19,>=0.18
+    - aiofiles
+    - aiohttp >=3.8.3
     - click >=0.7
-    - geopandas-base >=1
-    - numpy >=1.21
+    - netcdf4
+    - numpy >=2
     - pandas >=1
-    - pygeoogc <0.19,>=0.18
-    - pygeoutils <0.19,>=0.18
     - pyproj >=3.0.1
+    - rioxarray >=0.15
     - shapely >=2
-    - xarray >=2023.01
+    - xarray >=2024.7
 
 test:
   imports:
