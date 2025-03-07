@@ -1,5 +1,5 @@
 {% set name = "pygridmet" %}
-{% set version = "0.19.2" %}
+{% set version = "0.19.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pygridmet-{{ version }}.tar.gz
-  sha256: 14caaf1df1f741664eeeb5420ccf5b985d6f42c7a701ce84618f9e23ec096971
+  sha256: 954b2e287a8596a709bf2d74953ce10240d56a2790b402c731ce117bf0cf0347
 
 build:
   entry_points:
@@ -24,16 +24,14 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - aiofiles
-    - aiohttp >=3.8.3
     - click >=0.7
-    - nest-asyncio
     - netcdf4
     - numpy >=2
     - pandas >=1
     - pyproj >=3.0.1
     - rioxarray >=0.15
     - shapely >=2
+    - tiny-retriever >=0.1.3
     - xarray >=2024.7
 
 test:
